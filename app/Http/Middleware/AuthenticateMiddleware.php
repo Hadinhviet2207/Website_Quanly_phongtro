@@ -17,7 +17,7 @@ class AuthenticateMiddleware
     public function handle(Request $request, Closure $next)
     {
         if(Auth::id()== null){
-            return redirect()->route('auth.admin')->with('success','Bạn phải đăng nhập mới truy cập vào trang này!');;
+            return redirect()->route('auth.admin')->with('error','Bạn phải đăng nhập mới truy cập vào trang này!');;
         }
         return $next($request);
     }
