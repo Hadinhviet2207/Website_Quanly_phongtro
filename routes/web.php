@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\AuthController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Middleware\AuthenticateMiddleware;
+use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\ProfileController;
+use Laravel\Socialite\Facades\Socialite;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +29,11 @@ Route::get('admin', [AuthController::class, 'index'])->name('auth.admin');
 Route::get('logout', [AuthController::class, 'logout'])->name('auth.logout');
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('register', [AuthController::class, 'register'])->name('auth.register');
+
+
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
+
+Route::get('auth/facebook', [FacebookController::class, 'facebookpage'])->name('auth.facebook');
+Route::get('auth/facebook/callback', [FacebookController::class,'facebookredirect'])->name('auth.facebook.callback');
+

@@ -13,7 +13,22 @@
     <title>Đăng nhập & Đăng ký</title>
     <!-- Favicon -->
     <link href="/Website_Quanly_phongtro/public/backend/img/icon-deal.png" rel="icon">
+    
   </head>
+  <style>
+.error-message {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 5px;
+    font-family: 'Arial', sans-serif;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    font-style: italic; /* Chữ in nghiêng */
+}
+
+
+  </style>
   <body>
     <div class="container">
       <div class="forms-container">
@@ -32,5 +47,6 @@
         </script>
     @endif
     <script src="/Website_Quanly_phongtro/public/backend/app.js"></script>
+    
   </body>
 </html>

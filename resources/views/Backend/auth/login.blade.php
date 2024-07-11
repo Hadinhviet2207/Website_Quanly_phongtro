@@ -20,15 +20,20 @@
             <a href="../home/index.php"><input type="submit" value="ĐĂNG NHẬP" class="btn solid" /></a>
             <p class="social-text"> Hoặc Đăng nhập bằng</p>
             <div class="social-media">
-              <a href="#" class="social-icon">
+              <a href="{{ route('auth.facebook') }}" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
               <a href="#" class="social-icon">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a href="{{ route('auth.google') }}" class="social-icon">
                 <i class="fab fa-google"></i>
               </a>
+              @if (session('error'))
+              <div class="alert alert-danger">
+                  {{ session('error') }}
+              </div>
+              @endif
               <a href="#" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
               </a>

@@ -23,10 +23,12 @@
               class="nav-link dropdown-toggle nav-link-lg nav-link-user"> <img alt="image" src="/Website_Quanly_phongtro/public/backend/assets/img/user.png"
                 class="user-img-radious-style"> <span class="d-sm-none d-lg-inline-block"></span></a>
             <div class="dropdown-menu dropdown-menu-right pullDown">
-              <div class="dropdown-title">Xin chào Admin</div>
-              <a href="profile.php" class="dropdown-item has-icon"> <i class="far
+              <div class="dropdown-title">Xin chào, {{ Auth::user()->name }}</div>
+              <a href="#" class="dropdown-item has-icon"> <i class="far
 										fa-user"></i> Thông tin cá nhân
-              </a> 
+              </a>
+              <a href="{{route('auth.logout')}}" class="dropdown-item has-icon"> <i class="fas fa-sign-out-alt"></i> Đăng xuất
+              </a>  
             </div>
           </li>
         </ul>

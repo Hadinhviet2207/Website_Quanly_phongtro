@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->nullable()->unique();
             $table->string('numberphone')->unique();
             $table->string('password');
+            
             $table->timestamps();
         });
     }
